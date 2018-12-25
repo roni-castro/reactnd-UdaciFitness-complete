@@ -84,9 +84,7 @@ export default class AddEntry extends Component {
                 <View>
                     <Ionicons name={'md-happy'} size={100}/>
                     <Text>You already logged your information for today.</Text>
-                    <TextButton onPress={this.reset}>
-                        Reset
-                    </TextButton>
+                    <TextButton value='Reset' onPress={this.reset} />
                 </View>
             )
         }
