@@ -1,15 +1,15 @@
 
  import React from 'react'
- import { View, Text, StyleSheet, Platform } from 'react-native'
+ import UdaciFitnessCalendar from 'udacifitness-calendar'
+ import DateHeader from './DateHeader';
+ import MetricCard from './MetricCard';
+ import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native'
  import { connect } from 'react-redux'
  import { receiveEntries, addEntry } from '../actions'
  import { timeToString, getDailyReminderValue } from '../utils/helpers'
  import { fetchCalendarResults } from '../utils/api'
- import UdaciFitnessCalendar from 'udacifitness-calendar'
-import { white } from '../utils/colors';
-import DateHeader from './DateHeader';
-import MetricCard from './MetricCard';
-import { AppLoading } from 'expo'
+ import { AppLoading } from 'expo'
+ import { white } from '../utils/colors';
  
   class History extends React.Component {
     state = {
@@ -39,10 +39,16 @@ import { AppLoading } from 'expo'
                     <DateHeader date={formattedData} />
                     <Text style={styles.noDataText}>{today}</Text>
                 </View>
-                : <MetricCard
-                    date={formattedData}
-                    metrics={metrics}
-                    />}
+                : <TouchableOpacity 
+                    onPress={() => this.props.navigation.navigate(
+                        'HistoryDetail', 
+                        { entryId: key }
+                    )}>
+                    <MetricCard
+                        date={formattedData}
+                        metrics={metrics}
+                    />
+                 </TouchableOpacity>}
             </View>
        )
     }
