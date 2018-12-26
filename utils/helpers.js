@@ -156,5 +156,8 @@ export function isBetween (num, x, y) {
       borderRadius: 8,
       width: 50,
       height: 50,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginRight: 20,
     }
   })
