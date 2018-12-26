@@ -8,7 +8,7 @@ import TextButton from './TextButton';
 import { Ionicons } from '@expo/vector-icons'
 import { connect } from 'react-redux'
 import { addEntry } from '../actions/index'
-import { submitEntry, deleteEntry } from '../utils/localStorage'
+import { submitEntry, deleteEntry } from '../utils/api'
 import { white, purple, } from '../utils/colors';
 
 function SubmitBtn ({onPress}) {
