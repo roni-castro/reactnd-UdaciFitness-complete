@@ -1,9 +1,9 @@
 import React from 'react';
+import reducers from './reducers/reducer'
+import Tabs from './components/Tabs'
 import { View } from 'react-native';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import History from './components/History';
-import reducers from './reducers/reducer'
 
 export default class App extends React.Component {  
 
@@ -11,7 +11,7 @@ export default class App extends React.Component {
     return (
       <Provider store={createStore(reducers)}>
         <View style={{flex: 1}}>
-          <History/>
+          <Tabs/>
         </View>
       </Provider>
     );
