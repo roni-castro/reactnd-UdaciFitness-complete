@@ -2,6 +2,7 @@
 import React from 'react';
 import AddEntry from './AddEntry'
 import History from './History'
+import Live from './Live'
 import { Platform } from 'react-native';
 import { Ionicons, FontAwesome } from '@expo/vector-icons'
 import { white, purple } from '../utils/colors';
@@ -20,6 +21,13 @@ const RouteConfigs = {
     navigationOptions: {
       tabBarLabel: "Add Entry",
       tabBarIcon: ({ tintColor }) => <FontAwesome name='plus-square' size={30} color={tintColor} />
+    }
+  },
+  Live: {
+    screen: Live,
+    navigationOptions: {
+      tabBarLabel: "Live",
+      tabBarIcon: ({tintColor}) => <Ionicons name='ios-speedometer' size={30} color={tintColor} />
     }
   }
 };
