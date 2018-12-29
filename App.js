@@ -8,6 +8,7 @@ import { View } from 'react-native';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { purple, white } from './utils/colors';
+import { setLocalNotification, clearLocalNotification } from './utils/helpers'
 
 const MainNavigator = createStackNavigator({
   Home: {
@@ -29,6 +30,10 @@ const MainNavigator = createStackNavigator({
 
 const Main = createAppContainer(MainNavigator);
 export default class App extends React.Component {  
+
+  componentDidMount() {
+    setLocalNotification()
+  }
 
   render() {
     return (

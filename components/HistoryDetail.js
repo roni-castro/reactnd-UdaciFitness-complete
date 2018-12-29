@@ -22,7 +22,7 @@ class HistoryDetail extends React.Component {
     }
 
     shouldComponentUpdate(newProps) {
-        return newProps.metrics !== null && newProps.metrics.today
+        return newProps.metrics !== null && !newProps.metrics.today
     }
 
     reset = () => {
